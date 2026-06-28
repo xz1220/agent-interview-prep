@@ -1,9 +1,9 @@
 # Agent 源码库（15 个）
 
-源码本体：`life-os/intake/github-trending/agent-frameworks/`
-本仓库软链接：[`./agent-frameworks/`](agent-frameworks/) → 同一目录，直接 `cd 资料/agent-frameworks/<agent>` 读源码。
+源码本体就在本目录下 [`./agent-frameworks/<agent>/`](agent-frameworks/)，直接 `cd 资料/agent-frameworks/<agent>` 读。
+注意：这 ~2GB 源码被 `.gitignore` 忽略、**不进版本库**，所以 clone 本仓库后该目录是空的——跑下面的 `download.sh` 拉回来即可。
 
-> **首次使用 / 源码不见了**：跑 [`./download.sh`](download.sh) 一键把这 15 个仓库 `git clone --depth 1` 到软链目标处（`bash 资料/download.sh`；只下缺失的，幂等）。`claude-code` 是作者自己的私有库，脚本靠 `gh` 鉴权。
+> **首次使用 / 源码不见了**：跑 [`./download.sh`](download.sh) 一键把这 15 个仓库 `git clone --depth 1` 到 `资料/agent-frameworks/`（`bash 资料/download.sh`；只下缺失的，幂等）。`claude-code` 是作者自己的私有库，脚本靠 `gh` 鉴权。
 > "看点"列指：这个 agent 在面试题哪些桶上是好参考。详细映射见 [`../题→料映射.md`](../题→料映射.md)。
 
 | Agent | 语言 | Git 来源 | 一句话定位 | 面试看点 |

@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # 下载 / 重建 15 个优质 Agent 源码镜像
 #
-# 目标目录：资料/agent-frameworks/<name>/
-#   （软链 → life-os/intake/github-trending/agent-frameworks/，被 life-os 的 .gitignore 忽略，不进版本库）
-# 约定：git clone --depth 1（与 life-os manifest 一致）；幂等——已存在则跳过。
+# 目标目录：资料/agent-frameworks/<name>/（项目内真实目录，被本仓库 .gitignore 忽略，不进版本库）
+# 约定：git clone --depth 1（浅克隆省空间）；幂等——已存在则跳过。
 # 依赖：gh（GitHub CLI，已 `gh auth login`）。claude-code 是作者自己的私有库，需要 gh 鉴权。
 #
 # 用法：
@@ -13,9 +12,8 @@
 set -uo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LINK="$SCRIPT_DIR/agent-frameworks"
-REAL_ROOT="$(readlink -f "$LINK")"
-mkdir -p "$REAL_ROOT"
+DEST_ROOT="$(readlink -f "$SCRIPT_DIR/agent-frameworks")"   # 项目内真实目录（被 .gitignore 忽略；缺了就建）
+mkdir -p "$DEST_ROOT"
 
 command -v gh >/dev/null 2>&1 || { echo "需要 gh (GitHub CLI) 且已 gh auth login"; exit 1; }
 
@@ -41,7 +39,7 @@ WANT=("$@")
 want() { [ ${#WANT[@]} -eq 0 ] && return 0; for w in "${WANT[@]}"; do [ "$w" = "$1" ] && return 0; done; return 1; }
 
 clone_one() {
-  local name="$1" slug="$2" dest="$REAL_ROOT/$1"
+  local name="$1" slug="$2" dest="$DEST_ROOT/$1"
   if [ -d "$dest/.git" ]; then echo "SKIP  $name  (已存在)"; return 0; fi
   rm -rf "$dest"
   if timeout 600 gh repo clone "$slug" "$dest" -- --depth 1 -q >/dev/null 2>&1; then
@@ -61,4 +59,4 @@ done <<< "$REPOS"
 wait
 
 echo "----"
-echo "完成。源码在：$REAL_ROOT"
+echo "完成。源码在：$DEST_ROOT"

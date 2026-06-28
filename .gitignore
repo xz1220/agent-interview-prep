@@ -1,1 +1,5 @@
 .DS_Store
+
+# Agent 源码本体（~2GB，15 个仓库）——留在本地，不进版本库。
+# 缺了就跑 `bash 资料/download.sh` 重新拉。
+资料/agent-frameworks/

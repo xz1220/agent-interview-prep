@@ -25,9 +25,9 @@
 
 - 飞书《知识分享》主页：<https://enbmphajlu.feishu.cn/wiki/PycowmdZPiMERHkU6hmcAZ0onpg>
 - 🎯 面经题库总入口：<https://enbmphajlu.feishu.cn/wiki/YWrLwIkiniY7wbkvHdVc620onbb>
-- 资料·源码：`life-os/intake/github-trending/agent-frameworks/`（15 个 agent，本仓库以 `资料/agent-frameworks` 软链接接入）。**首次使用先跑 `bash 资料/download.sh` 把 15 个源码 clone 到本地**（git 来源逐个核实，见 [`资料/agent-frameworks.md`](资料/agent-frameworks.md)）
+- 资料·源码：15 个 agent 的真实源码放在项目内 `资料/agent-frameworks/`（~2GB，被 `.gitignore` 忽略、不进版本库）。**clone 本仓库后先跑 `bash 资料/download.sh` 把源码拉到本地**（git 来源逐个核实，见 [`资料/agent-frameworks.md`](资料/agent-frameworks.md)）
 
 ## 约定
 
-- **不把源码复制进本仓库**：源码留在 `life-os/intake/...`，这里只做索引、"看点"和映射（遵循 life-os 仓库约定）。
+- **源码不进 git**：15 个 agent 源码放在 `资料/agent-frameworks/`，但被 `.gitignore` 忽略，不进版本库 / 不推送（~2GB，用 `download.sh` 重建）。git 里只留索引、"看点"和映射。
 - 题目正文 **以飞书为准**：本仓库的题库部分是链接 + 统计 + 复习路线，不镜像几千道题。
