@@ -25,7 +25,7 @@
 
 - 飞书《知识分享》主页：<https://enbmphajlu.feishu.cn/wiki/PycowmdZPiMERHkU6hmcAZ0onpg>
 - 🎯 面经题库总入口：<https://enbmphajlu.feishu.cn/wiki/YWrLwIkiniY7wbkvHdVc620onbb>
-- 资料·源码：`life-os/intake/github-trending/agent-frameworks/`（15 个 agent，本仓库以 `资料/agent-frameworks` 软链接接入）
+- 资料·源码：`life-os/intake/github-trending/agent-frameworks/`（15 个 agent，本仓库以 `资料/agent-frameworks` 软链接接入）。**首次使用先跑 `bash 资料/download.sh` 把 15 个源码 clone 到本地**（git 来源逐个核实，见 [`资料/agent-frameworks.md`](资料/agent-frameworks.md)）
 
 ## 约定
 
